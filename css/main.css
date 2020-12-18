@@ -1,0 +1,39 @@
+/**
+    CSS file for ChooseAC
+    Created by Hydrogen
+
+    (c) Fume Development.
+ */
+
+@import url('https://thehydrogen.xyz/css/bulma.css');
+@import url('https://fonts.googleapis.com/css2?family=Questrial');
+
+body {
+    font-family: Questrial, sans-serif;
+    background-color: #074b58;
+
+    color: white !important;
+    height: 100vh;
+}
+
+.initial {
+    padding-top: 40vh;
+}
+
+.title {
+    font-weight: bolder;
+}
+
+.button {
+    background: #074b58 !important;
+    border: white 1px !important;
+    border-style: solid !important;
+    border-radius: 10px !important;
+
+    transition-duration: 200ms;
+}
+
+.button:hover {
+    transition-duration: 200ms;
+    transform: scale(1.05);
+}
