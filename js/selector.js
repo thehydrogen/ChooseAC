@@ -148,6 +148,11 @@ function end() {
 
     for (var ac in anticheats) {
         if (excluded.includes(anticheats[ac])) continue;
+        if (anticheats[ac].startsWith('Verus')) {
+            result += ('&bullet; ' + anticheats[ac] + ' (not recommended)<br>');
+            continue;
+        }
+
         result += ('&bullet; ' + anticheats[ac] + '<br>');
     }
 
