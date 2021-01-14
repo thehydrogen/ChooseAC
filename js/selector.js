@@ -2,7 +2,7 @@
  * Logic for choosing anti-cheat most suitable for you.
  */
 
-const anticheats = ['Vulcan', 'Karhu', 'Sparky', 'Verus (Basic)', 'Verus (Premium)', 'Kauri (Ara)'];
+const anticheats = ['Spartan', 'Vulcan', 'Karhu', 'Sparky', 'Verus (Basic)', 'Verus (Premium)', 'Kauri (Ara)'];
 var excluded = [];
 var strict = false;
 
@@ -27,6 +27,7 @@ function go() {
 function oneChosen(answer) {
     if (answer === 'yes') {
         excluded.push('Verus (Basic)');
+        excluded.push('Spartan');
         if (strict) excluded.push("Verus (Premium)");
         if (strict) excluded.push("Kauri (Ara)");
     }
@@ -96,6 +97,7 @@ function fourChosen(answer) {
 <h1 class="title is-2" style="color:white;">What type of server do you run?</h1>
 <a href="javascript:fiveChosen('hcf');" class="button is-black">HCF</a>
 <a href="javascript:fiveChosen('prac');" class="button is-black">Practice</a>
+<a href="javascript:fiveChosen('kit');" class="button is-black">KitPVP</a>
 <a href="javascript:fiveChosen('other');" class="button is-black">Other</a>
 `;
     }, 1200);
@@ -104,6 +106,11 @@ function fourChosen(answer) {
 function fiveChosen(answer) {
     if (answer === 'hcf') {
         if (!excluded.includes('Vulcan') && strict) excluded.push('Vulcan');
+        if (!excluded.includes('Spartan') && strict) excluded.push('Spartan');
+    }
+    
+    if (answer === 'prac') {
+        if (!excluded.includes('Spartan') && strict) excluded.push('Spartan');
     }
 
     c = document.getElementById('main');
