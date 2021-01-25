@@ -2,7 +2,7 @@
  * Logic for choosing anti-cheat most suitable for you.
  */
 
-const anticheats = ['Spartan', 'Vulcan', 'Karhu', 'Sparky', 'Verus (Basic)', 'Verus (Premium)', 'Kauri (Ara)'];
+const anticheats = ['Spartan', 'Vulcan', 'Karhu', 'Sparky', 'Kauri (Ara)'];
 var excluded = [];
 var strict = false;
 
@@ -26,9 +26,7 @@ function go() {
 
 function oneChosen(answer) {
     if (answer === 'yes') {
-        excluded.push('Verus (Basic)');
         excluded.push('Spartan');
-        if (strict) excluded.push("Verus (Premium)");
         if (strict) excluded.push("Kauri (Ara)");
     }
 
@@ -85,8 +83,6 @@ function threeChosen(answer) {
 
 function fourChosen(answer) {
     if (answer === 'yes') {
-        if (!excluded.includes('Verus (Basic)')) excluded.push('Verus (Basic)');
-        if (!excluded.includes('Verus (Premium)')) excluded.push("Verus (Premium)");
     }
 
     c = document.getElementById('main');
@@ -135,13 +131,10 @@ function sixChosen(answer) {
         if (!excluded.includes('Sparky')) excluded.push("Sparky");
         if (!excluded.includes('Kauri (Ara)')) excluded.push("Kauri (Ara)");
         if (!excluded.includes('Verus (Basic)')) excluded.push("Verus (Basic)");
-        if (!excluded.includes('Verus (Premium)')) excluded.push("Verus (Premium)");
     } else if (answer === "two") {
         if (!excluded.includes('Kauri (Ara)')) excluded.push("Kauri (Ara)");
-        if (!excluded.includes('Verus (Premium)')) excluded.push("Verus (Premium)");
     } else if (answer == "three") {
         if (!excluded.includes('Kauri (Ara)')) excluded.push("Kauri (Ara)");
-        if (!excluded.includes('Verus (Premium)')) excluded.push("Verus (Premium)");
     }
 
     end();
