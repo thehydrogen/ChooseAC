@@ -45,7 +45,7 @@ function oneChosen(answer) {
 
 function twoChosen(answer) {
     if (answer === 'yes') {
-        if (strict) excluded.push('Vulcan');
+        if (strict) excluded.push('Karhu');
     }
 
     c = document.getElementById('main');
@@ -100,13 +100,8 @@ function fourChosen(answer) {
 }
 
 function fiveChosen(answer) {
-    if (answer === 'hcf') {
-        if (!excluded.includes('Vulcan') && strict) excluded.push('Vulcan');
-        if (!excluded.includes('Spartan') && strict) excluded.push('Spartan');
-    }
-    
-    if (answer === 'prac') {
-        if (!excluded.includes('Spartan') && strict) excluded.push('Spartan');
+    if (answer === 'hcf' || answer === 'prac') {
+        if (!excluded.includes('Spartan')) excluded.push('Spartan');
     }
 
     c = document.getElementById('main');
@@ -148,11 +143,6 @@ function end() {
 
     for (var ac in anticheats) {
         if (excluded.includes(anticheats[ac])) continue;
-        if (anticheats[ac].startsWith('Verus')) {
-            result += ('&bullet; ' + anticheats[ac] + ' (not recommended)<br>');
-            continue;
-        }
-
         result += ('&bullet; ' + anticheats[ac] + '<br>');
     }
 
